@@ -12,7 +12,7 @@ const Navbar = () => {
                 width="100%"
           >
               <Box>
-                      <Link p={5} colorScheme="blue" exact to="/">Home</Link>
+                      <Link p={5} colorScheme="blue" to="/">Home</Link>
                       <Link p={5} to="/blogs">Blogs</Link>
               </Box>
               <Box>
