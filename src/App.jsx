@@ -1,13 +1,12 @@
+
 import './App.css'
-import BlogList from './components/BlogList';
-import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
   
   return (
     <div className='app-container'>
-        <Navbar/>
-        <BlogList/>
+        <Home />
     </div>
   )
 }

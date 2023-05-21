@@ -22,7 +22,7 @@ const BlogList = () => {
 
             {error && <Alert status="error">
                           <AlertIcon></AlertIcon>
-                          <AlertTitle>Houston, we've got a problem.</AlertTitle>
+                          <AlertTitle>Error.</AlertTitle>
                           <AlertDescription>{error}</AlertDescription>
                             
                       </Alert>}

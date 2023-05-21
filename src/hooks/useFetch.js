@@ -22,6 +22,7 @@ const useFetch = (endpoint) => {
       .catch((e) => {
             setError(e.message);
             setIsLoading(false);
+            setData(null);
       })
   }, [endpoint])
 
