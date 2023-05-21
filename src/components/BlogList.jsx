@@ -1,4 +1,5 @@
 import React from "react";
+import useFetch from "../hooks/useFetch";
 import { 
   Heading, 
   Text, 
@@ -11,32 +12,10 @@ import {
   AlertDescription,
 } from "@chakra-ui/react";
 import '../index.css' 
-import { useEffect, useState } from "react";
 
 const BlogList = () => {
 
-    const [blogs, setBlogs] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-      fetch('http://localhost:3000/blsogs')
-      .then(res => {
-          if(!res.ok){
-            throw Error("I couldn't find the blogs")
-          } 
-          return res.json();
-      })
-      .then(data => {
-            setBlogs(data);
-            setIsLoading(false);
-            setError(null);
-      })
-      .catch((e) => {
-            setError(e.message);
-            setIsLoading(false);
-      })
-  }, [])
+   const { data: blogs, error, isLoading } = useFetch('http://localhost:3000/blogs')
 
   return (
     <div className="blog-list">
