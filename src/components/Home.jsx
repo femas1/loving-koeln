@@ -6,7 +6,6 @@ import Navbar from './Navbar'
 const Home = () => {
   return (
     <>
-        <Navbar />
         <Heading>
         Welcome.
         </Heading>

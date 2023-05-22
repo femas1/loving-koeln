@@ -1,3 +1,4 @@
+import { Link as RouteLink} from 'react-router-dom';
 import { HStack, Button, Link, Box, Flex, Stack } from "@chakra-ui/react";
 
 const Navbar = () => {
@@ -12,11 +13,11 @@ const Navbar = () => {
                 width="100%"
           >
               <Box>
-                      <Link p={5} colorScheme="blue" to="/">Home</Link>
-                      <Link p={5} to="/blogs">Blogs</Link>
+                      <Link as={ RouteLink } p={5} colorScheme="blue" to="/">Home</Link>
+                      <Link as={ RouteLink } p={5} to="/blogs">Blogs</Link>
               </Box>
               <Box>
-                      <Link p={5} to="/about">About</Link>
+                      <Link as={ RouteLink } p={5} to="/about">About</Link>
               </Box>
           </Flex>
     </>
