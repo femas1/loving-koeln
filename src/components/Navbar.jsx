@@ -1,5 +1,6 @@
 import { Link as RouteLink} from 'react-router-dom';
-import { HStack, Button, Link, Box, Flex, Stack } from "@chakra-ui/react";
+import { HStack, Button, Link, Box, Flex, Stack, Image } from "@chakra-ui/react";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ const Navbar = () => {
                 maxWidth="1024px"
                 width="100%"
           >
+                      <Image src={logo} maxHeight="80px" />
               <Box>
                       <Link as={ RouteLink } p={5} colorScheme="blue" to="/">Home</Link>
                       <Link as={ RouteLink } p={5} to="/blogs">Blogs</Link>
