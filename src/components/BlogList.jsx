@@ -11,6 +11,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@chakra-ui/react";
+import { Link as RouteLink } from 'react-router-dom';
 import '../index.css' 
 
 const BlogList = () => {
@@ -30,7 +31,7 @@ const BlogList = () => {
             
             {blogs && blogs.map(blog => (
                     <Flex key={blog.id} direction="column">                   
-                      <Heading p="3">{blog.title}</Heading>
+                    <Link as={ RouteLink } to={`/blogs/${blog.id}`}><Heading p="3">{blog.title}</Heading></Link>
                       <Text p="5">{blog.text}</Text>
                       <Link p="3">{blog.author}</Link>
                     </Flex>

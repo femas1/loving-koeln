@@ -1,0 +1,25 @@
+{
+    "about": {
+      "title": "About Loving Köln",
+      "description": "Loving Köln is a blog dedicated to sharing the love for the vibrant city of Köln, Germany. We aim to uncover the hidden gems, explore the rich cultural heritage, and showcase the captivating sights and experiences that make Köln a beloved destination for locals and travelers alike.",
+      "mission": "Our mission is to inspire and guide you on a journey of discovery, as we delve into the unique blend of history, art, architecture, and culinary delights that Köln has to offer. Through our articles, photographs, and personal stories, we invite you to join us in embracing the magic and charm of this enchanting city.",
+      "team": [
+        {
+          "name": "Emily Fischer",
+          "role": "Founder & Editor",
+          "bio": "Emily is a passionate traveler and storyteller. With a deep love for Köln, she founded Loving Köln to share her experiences and connect with fellow adventurers. Through her articles, Emily aims to capture the essence of Köln and inspire others to embark on their own journeys of love and exploration."
+        },
+        {
+          "name": "Maximilian Keller",
+          "role": "Photographer",
+          "bio": "Maximilian is a talented photographer with a keen eye for capturing the beauty and essence of Köln. His breathtaking images transport viewers to the heart of the city, evoking emotions and inviting them to see Köln through a different lens."
+        }
+      ],
+      "contact": {
+        "email": "info@lovingkoln.com",
+        "phone": "+49 123 456789",
+        "address": "123 Loving Street, Köln, Germany"
+      }
+    }
+  }
+  

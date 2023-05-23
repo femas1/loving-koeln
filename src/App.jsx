@@ -3,6 +3,8 @@ import './App.css'
 import Home from './components/Home';
 import BlogList from './components/BlogList';
 import Navbar from './components/Navbar';
+import About from './components/About';
+import BlogDetails from './components/BlogDetails';
 
 function App() {
   
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Home />}/>
           <Route path='/blogs' element={<BlogList />}/>
+          <Route path='/blogs/:id' element={<BlogDetails />}/>
+          <Route path='/about' element={<About />}/>
         </Routes>
     </div>
     </Router>
