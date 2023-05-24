@@ -1,3 +1,4 @@
-.blog-list {
+.blog-list,
+.blog-detail {
     max-width: 1024px;
 }

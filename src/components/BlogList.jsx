@@ -14,6 +14,18 @@ import {
 import { Link as RouteLink } from 'react-router-dom';
 import '../index.css' 
 
+import { createClient } from 'contentful';
+
+const client = createClient({
+  space: 'kmkh4m6n0xi7',
+  environment: 'master',
+  accessToken: 'DXV1XuNI-9k6FK9qWIn6bY3onR5T1VEGauAQ6Ch-VbA'
+})
+
+client.getEntries()
+.then((response) => console.log(response.items))
+.catch(console.error);
+
 const BlogList = () => {
 
    const { data: blogs, error, isLoading } = useFetch('http://localhost:3000/blogs')

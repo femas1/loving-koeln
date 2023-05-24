@@ -10,7 +10,7 @@ const Navbar = () => {
                 bgColor="red.400"
                 align="center"
                 justify="space-between"
-                maxWidth="1024px"
+                // maxWidth="1024px"
                 width="100%"
           >
                       <Image src={logo} maxHeight="80px" />
