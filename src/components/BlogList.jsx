@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 import { 
   Heading, 
@@ -14,26 +15,16 @@ import {
 import { Link as RouteLink } from 'react-router-dom';
 import '../index.css' 
 
-import { createClient } from 'contentful';
-
-const client = createClient({
-  space: 'kmkh4m6n0xi7',
-  environment: 'master',
-  accessToken: 'DXV1XuNI-9k6FK9qWIn6bY3onR5T1VEGauAQ6Ch-VbA'
-})
-
-client.getEntries()
-.then((response) => console.log(response.items))
-.catch(console.error);
+import useContentfulApi from "../hooks/useContentfulApi";
 
 const BlogList = () => {
-
-   const { data: blogs, error, isLoading } = useFetch('http://localhost:3000/blogs')
+   //  const { data: blogs, error, isLoading } = useFetch('http://localhost:3000/blogs')
+  const {newBlogs, error, isLoading} = useContentfulApi('http://localhost:3000/blogs');
 
   return (
     <div className="blog-list">
 
-            {error && <Alert status="error">
+            {/* {error && <Alert status="error">
                           <AlertIcon></AlertIcon>
                           <AlertTitle>Error.</AlertTitle>
                           <AlertDescription>{error}</AlertDescription>
@@ -48,7 +39,9 @@ const BlogList = () => {
                       <Link p="3">{blog.author}</Link>
                     </Flex>
                 )
-            )}
+            )} */}
+
+            {newBlogs && newBlogs.map(newBlog => <h1 key={newBlog.fields.title}>{newBlog.fields.title}</h1>)}
     </div>
   )
 }

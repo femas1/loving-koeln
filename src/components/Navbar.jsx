@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
           <Flex 
                 p={1} 
-                bgColor="red.400"
+                bgColor="#FD0324"
                 align="center"
                 justify="space-between"
                 // maxWidth="1024px"
