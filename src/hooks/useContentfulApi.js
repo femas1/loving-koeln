@@ -17,10 +17,14 @@ const [isLoading, setIsLoading] = useState(true);
    useEffect(() => {
       client.getEntries()
       .then((res) => {
-        setNewBlogs(res.items);
-        setIsLoading(false);
+          setNewBlogs(res.items);
+          setIsLoading(false);
+          // setError(null);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.log(error)
+        setError(error.message)
+      }) 
     }, [])
 
   return {newBlogs, error, isLoading}

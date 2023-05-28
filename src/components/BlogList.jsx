@@ -41,7 +41,18 @@ const BlogList = () => {
                 )
             )} */}
 
-            {newBlogs && newBlogs.map(newBlog => <h1 key={newBlog.fields.title}>{newBlog.fields.title}</h1>)}
+            {newBlogs && newBlogs.map(newBlog => 
+
+                <Link 
+                    key={newBlog.fields.title}
+                    as={ RouteLink } 
+                    to={`/blogs/${newBlog.fields.id}`}
+                    >
+                      <Heading>{newBlog.fields.title}</Heading>
+                </Link>
+                )
+                
+                }
     </div>
   )
 }
