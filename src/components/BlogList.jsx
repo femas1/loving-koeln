@@ -19,7 +19,7 @@ import useContentfulApi from "../hooks/useContentfulApi";
 
 const BlogList = () => {
    //  const { data: blogs, error, isLoading } = useFetch('http://localhost:3000/blogs')
-  const {newBlogs, error, isLoading} = useContentfulApi('http://localhost:3000/blogs');
+  const {newBlogs, error, isLoading} = useContentfulApi();
 
   return (
     <div className="blog-list">

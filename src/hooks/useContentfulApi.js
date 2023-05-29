@@ -7,7 +7,7 @@ const client = createClient({
     accessToken: 'DXV1XuNI-9k6FK9qWIn6bY3onR5T1VEGauAQ6Ch-VbA'
   })
 
-const useContentfulApi = () => {
+const useContentfulApi = (blogId) => {
 
 const [newBlogs, setNewBlogs] = useState(null);
 const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const [isLoading, setIsLoading] = useState(true);
 
 
    useEffect(() => {
-      client.getEntries()
+      client.getEntries({content_type: 'blogs', 'fields.id': blogId})
       .then((res) => {
           setNewBlogs(res.items);
           setIsLoading(false);
@@ -25,7 +25,7 @@ const [isLoading, setIsLoading] = useState(true);
         console.log(error)
         setError(error.message)
       }) 
-    }, [])
+    }, [blogId])
 
   return {newBlogs, error, isLoading}
 }
