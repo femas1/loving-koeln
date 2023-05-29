@@ -4,7 +4,7 @@ import useContentfulApi from "../hooks/useContentfulApi";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { newBlogs: blog, isLoading, error } = useContentfulApi(id)
+    const { newBlogs: blog, isLoading, error } = useContentfulApi(id);
 
   return (
     <div className="blog-detail">
