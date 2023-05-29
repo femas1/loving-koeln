@@ -1,4 +1,4 @@
-import { Heading, Text, Spinner, Flex, Link } from "@chakra-ui/react";
+import { Heading, Text, Spinner, Flex, Link, Tag, Avatar } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import useContentfulApi from "../hooks/useContentfulApi";
 
@@ -12,9 +12,13 @@ const BlogDetails = () => {
 
       { blog && (
         <Flex key={blog[0].fields.id} direction="column">
-                      <Heading p="3">{blog[0].fields.title}</Heading>
-                      <Text p="5">{blog[0].fields.text}</Text>
-                      <Link p="3">Written by {blog[0].fields.author}</Link>
+                      <Heading mt="5">{blog[0].fields.title}</Heading>
+                      <Text pt="5" pb="5">{blog[0].fields.text}</Text>
+                      <Text>Written by 
+                        <Link p={"2"}>
+                          <Tag p="2">{blog[0].fields.author}</Tag>
+                        </Link>
+                      </Text>
         </Flex>
       )}
     </div>
