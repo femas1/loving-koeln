@@ -5,6 +5,7 @@ import BlogList from './components/BlogList';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import BlogDetails from './components/BlogDetails';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Route path='/blogs/:id' element={<BlogDetails />}/>
           <Route path='/about' element={<About />}/>
         </Routes>
+    <Footer /> 
     </div>
     </Router>
   )
