@@ -17,6 +17,7 @@ const Navbar = () => {
               <Box>
                       <Link as={ RouteLink } p={5} to="/">Home</Link>
                       <Link as={ RouteLink } p={5} to="/blogs">Blogs</Link>
+                      <Link as={ RouteLink } p={5} to="/blogs/authors">Authors</Link>
               </Box>
               <Box>
                       <Link as={ RouteLink } p={5} to="/about">About</Link>
