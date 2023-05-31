@@ -1,6 +1,8 @@
 import { Heading, Text, Spinner, Flex, Link, Tag, Avatar, Card, CardHeader, CardBody } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { Link as RouteLink } from 'react-router-dom';
 import useContentfulApi from "../hooks/useContentfulApi";
+
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -26,7 +28,11 @@ const BlogDetails = () => {
           <CardBody>
               <Text pt="5" pb="5">{blog[0].fields.text}</Text>
                 <Text>Written by 
-                  <Link p={"2"}>
+                  <Link 
+                        p={"2"}
+                        as={ RouteLink } 
+                        to={`/blogs/authors/${blog[0].fields.id}`}
+                  >
                     <Tag 
                         p="2"
                         colorScheme="black"

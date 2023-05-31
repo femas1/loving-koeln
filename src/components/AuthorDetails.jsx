@@ -6,7 +6,6 @@ const AuthorDetails = () => {
 
     const { author } = useParams();
     const {newBlogs, error, isLoading} = useContentfulApi(author);
-    console.log(newBlogs)
 
   return (
     <>
