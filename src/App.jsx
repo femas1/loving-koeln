@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import About from './components/About';
 import BlogDetails from './components/BlogDetails';
 import Footer from './components/Footer';
+import AuthorList from './components/AuthorList';
+import AuthorDetails from './components/AuthorDetails';
 
 function App() {
   
@@ -18,6 +20,8 @@ function App() {
           <Route path='/blogs' element={<BlogList />}/>
           <Route path='/blogs/:id' element={<BlogDetails />}/>
           <Route path='/about' element={<About />}/>
+          <Route path='/blogs/authors' element={<AuthorList />}/>
+          <Route path='/blogs/authors/:author' element={<AuthorDetails />}/>
         </Routes>
     <Footer /> 
     </div>

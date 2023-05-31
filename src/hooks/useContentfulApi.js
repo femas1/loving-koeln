@@ -7,7 +7,7 @@ const client = createClient({
     accessToken: 'DXV1XuNI-9k6FK9qWIn6bY3onR5T1VEGauAQ6Ch-VbA'
   })
 
-const useContentfulApi = (blogId) => {
+const useContentfulApi = (blogId, authorName) => {
 
 const [newBlogs, setNewBlogs] = useState(null);
 const [error, setError] = useState(null);

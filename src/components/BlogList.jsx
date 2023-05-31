@@ -53,8 +53,7 @@ const BlogList = () => {
                             py='2'
                             color="blackAlpha.700"
                         >
-                          Caffè latte is a coffee beverage of Italian origin made with espresso
-                          and steamed milk.
+                         {newBlog.fields.text.slice(0, 200)}...
                         </Text>
                       </CardBody>
 
@@ -69,7 +68,7 @@ const BlogList = () => {
                             variant='solid' 
                             colorScheme='red'
                           >
-                          More...
+                          Read more...
                         </Button>
                             
                         </Link>
