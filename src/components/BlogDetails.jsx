@@ -2,7 +2,16 @@ import { Heading, Text, Spinner, Flex, Link, Tag, Avatar, Card, CardHeader, Card
 import { useParams } from "react-router-dom";
 import { Link as RouteLink } from 'react-router-dom';
 import useContentfulApi from "../hooks/useContentfulApi";
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
+const RICHTEXT_OPTIONS = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <Text pt="5" pb="5">{children}</Text>
+    }
+  }
+}
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -12,7 +21,7 @@ const BlogDetails = () => {
     <div className="blog-detail">
       { isLoading && <Heading mt={10} p={5}>Loading article...<Spinner size='xl' /></Heading>} 
 
-      { blog && (
+      { blog && (        
         <Card 
             
             key={blog[0].fields.id} 
@@ -27,6 +36,7 @@ const BlogDetails = () => {
             </CardHeader>
           <CardBody>
               <Text pt="5" pb="5">{blog[0].fields.text}</Text>
+              {documentToReactComponents(blog[0].fields.body, RICHTEXT_OPTIONS)}
                 <Text>Written by 
                   <Link 
                         p={"2"}
