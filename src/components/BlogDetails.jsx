@@ -46,8 +46,8 @@ const BlogDetails = () => {
                         p="2"
                         colorScheme="black"
                     >
-                    {authors && authors.map(author => author.fields.authorName)}
-                    </Tag>
+                    {/* {authors && authors.map(author => author.fields.authorName)} */}
+                        {blog[0].fields.author.fields.authorName}</Tag>
                   </Link>
               </Text>
           </CardBody>
