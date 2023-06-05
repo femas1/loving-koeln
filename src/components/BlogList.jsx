@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
-import { 
-  Heading, 
+import {
+  Heading,
   Link,
   Card, CardHeader, CardBody, CardFooter, Image, Stack, Button, Text
 } from "@chakra-ui/react";
 import { Link as RouteLink } from 'react-router-dom';
-import '../index.css' 
+import '../index.css'
 
 import useContentfulApi from "../hooks/useContentfulApi";
 
@@ -18,9 +18,9 @@ const BlogList = () => {
 
   return (
     <div className="blog-list">
-            {newBlogs && newBlogs.map(newBlog => 
+            {newBlogs && newBlogs.map(newBlog =>
 
-           
+
                 <Card
                     key={newBlog.fields.title}
                     direction={{ base: 'column', sm: 'row' }}
@@ -29,7 +29,7 @@ const BlogList = () => {
                     bgColor="black.50"
                     marginTop={10}
                   >
-                
+
                   {newBlog.fields.image && (
                       <Image
                         objectFit='cover'
@@ -41,40 +41,40 @@ const BlogList = () => {
 
                     <Stack>
                       <CardBody>
-                        <Link 
-                          as={ RouteLink } 
+                        <Link
+                          as={ RouteLink }
                           to={`/blogs/${newBlog.fields.id}`}
                           color="blackAlpha.800"
                           >
                             <Heading>{newBlog.fields.title}</Heading>
                         </Link>
 
-                        <Text 
+                        <Text
                             py='2'
                             color="blackAlpha.700"
                         >
-                         {newBlog.fields.text.slice(0, 200)}...
+                         {/* {newBlog.fields.text.slice(0, 200)}... */}
                         </Text>
                       </CardBody>
 
                       <CardFooter>
 
-                      <Link 
-                          as={ RouteLink } 
+                      <Link
+                          as={ RouteLink }
                           to={`/blogs/${newBlog.fields.id}`}
                           color="blackAlpha.800"
                           >
-                      <Button 
-                            variant='solid' 
+                      <Button
+                            variant='solid'
                             colorScheme='red'
                           >
                           Read more...
                         </Button>
-                            
+
                         </Link>
 
 
-                        
+
                       </CardFooter>
                     </Stack>
                   </Card>
@@ -84,7 +84,7 @@ const BlogList = () => {
 
 
                 )
-                
+
                 }
     </div>
   )

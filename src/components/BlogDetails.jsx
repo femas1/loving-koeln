@@ -5,7 +5,7 @@ import useContentfulApi from "../hooks/useContentfulApi";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
-const RICHTEXT_OPTIONS = {
+export const RICHTEXT_OPTIONS = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
       return <Text pt="5" pb="5">{children}</Text>
@@ -35,7 +35,6 @@ const BlogDetails = () => {
               <Heading size='xl'>{blog[0].fields.title}</Heading>
             </CardHeader>
           <CardBody>
-              <Text pt="5" pb="5">{blog[0].fields.text}</Text>
               {documentToReactComponents(blog[0].fields.body, RICHTEXT_OPTIONS)}
                 <Text>Written by 
                   <Link 

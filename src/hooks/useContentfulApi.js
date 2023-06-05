@@ -10,6 +10,7 @@ const client = createClient({
 const useContentfulApi = (blogId, authorName) => {
 
 const [newBlogs, setNewBlogs] = useState(null);
+const [authors, setAuthors] = useState(null);
 const [error, setError] = useState(null);
 const [isLoading, setIsLoading] = useState(true);
 
@@ -20,6 +21,12 @@ const [isLoading, setIsLoading] = useState(true);
           setNewBlogs(res.items);
           setIsLoading(false);
           // setError(null);
+          return client.getEntries({content_type: 'authors', 'fields.id': authorName})
+      })
+      .then(authorResponse => {
+          setAuthors(authorResponse.items);
+          setIsLoading(false);
+          setError(null);
       })
       .catch((error) => {
         console.log(error)
@@ -27,7 +34,7 @@ const [isLoading, setIsLoading] = useState(true);
       }) 
     }, [blogId])
 
-  return {newBlogs, error, isLoading}
+  return {newBlogs, authors, error, isLoading}
 }
 
 export default useContentfulApi;
