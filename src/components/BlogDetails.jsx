@@ -15,7 +15,7 @@ export const RICHTEXT_OPTIONS = {
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { newBlogs: blog, isLoading, error } = useContentfulApi(id);
+    const { newBlogs: blog, isLoading, error, authors } = useContentfulApi(id);
 
   return (
     <div className="blog-detail">
@@ -46,7 +46,8 @@ const BlogDetails = () => {
                         p="2"
                         colorScheme="black"
                     >
-                        {blog[0].fields.author}</Tag>
+                    {authors && authors.map(author => author.fields.authorName)}
+                    </Tag>
                   </Link>
               </Text>
           </CardBody>
