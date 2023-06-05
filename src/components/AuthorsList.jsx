@@ -4,15 +4,15 @@ import useContentfulApi from '../hooks/useContentfulApi';
 import { useParams } from "react-router-dom";
 
 const AuthorList = () => {
-  const { authorName } = useParams();
-  const { authors, isLoading, error } = useContentfulApi(authorName);
+  const { authors, isLoading, error } = useContentfulApi();
+  // console.log(authors[0].sys);
   return (
 
     <Stack direction={['column', 'row']} spacing={4} my={4}>
       {authors && authors.map((author) => (
         <Link
           as={RouteLink}
-          to={`/blogs/authors/${author.fields.authorName}`}
+          to={`/blogs/authors/${author.sys.id}`}
           key={author.fields.id}
           color={"blackAlpha.700"}
         >

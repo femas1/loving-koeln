@@ -32,7 +32,7 @@ const [isLoading, setIsLoading] = useState(true);
         console.log(error)
         setError(error.message)
       }) 
-    }, [blogId])
+    }, [blogId, authorName])
 
   return {newBlogs, authors, error, isLoading}
 }
