@@ -16,7 +16,7 @@ export const RICHTEXT_OPTIONS = {
 const BlogDetails = () => {
     const { id } = useParams();
     const { newBlogs: blog, isLoading, error, authors } = useContentfulApi(id);
-
+  
   return (
     <div className="blog-detail">
       { isLoading && <Heading mt={10} p={5}>Loading article...<Spinner size='xl' /></Heading>} 
@@ -40,14 +40,14 @@ const BlogDetails = () => {
                   <Link 
                         p={"2"}
                         as={ RouteLink } 
-                        to={`/blogs/authors/${blog[0].fields.id}`}
+                        to={`/blogs/authors/${blog[0].fields.author.sys.id}`}
                   >
                     <Tag 
                         p="2"
                         colorScheme="black"
                     >
-                    {/* {authors && authors.map(author => author.fields.authorName)} */}
-                        {blog[0].fields.author.fields.authorName}</Tag>
+                        {blog[0].fields.author.fields.authorName}
+                        </Tag>
                   </Link>
               </Text>
           </CardBody>
