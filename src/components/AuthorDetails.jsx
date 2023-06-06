@@ -15,16 +15,16 @@ const RICHTEXT_OPTIONS = {
 const AuthorDetails = () => {
 
     const { author } = useParams();
-    const {authors, error, isLoading} = useContentfulApi();
-
-  return (
+    const {authors, error, isLoading} = useContentfulApi(null, author);
+    console.log(authors)
+    return (
     <div className='author-detail'>
-    {authors && authors.map((author) => (
+    {authors && (
              <Box>
-             <Heading my={5} key={author.sys.id} color={'blackAlpha.800'}>{author.fields.authorName}</Heading>
-             {documentToReactComponents(author.fields.bio, RICHTEXT_OPTIONS)}
+             <Heading my={5} key={authors[0].sys.id} color={'blackAlpha.800'}>{authors[0].fields.authorName}</Heading>
+             {documentToReactComponents(authors[0].fields.bio, RICHTEXT_OPTIONS)}
               </Box>
-        ))}
+        )}
 
     </div>
   )

@@ -7,7 +7,7 @@ const client = createClient({
     accessToken: 'DXV1XuNI-9k6FK9qWIn6bY3onR5T1VEGauAQ6Ch-VbA'
   })
 
-const useContentfulApi = (blogId, authorName) => {
+const useContentfulApi = (blogId, authorId) => {
 
 const [newBlogs, setNewBlogs] = useState(null);
 const [authors, setAuthors] = useState(null);
@@ -21,7 +21,7 @@ const [isLoading, setIsLoading] = useState(true);
           setNewBlogs(res.items);
           setIsLoading(false);
           // setError(null);
-          return client.getEntries({content_type: 'authors', 'fields.id': authorName})
+          return client.getEntries({content_type: 'authors', 'sys.id': authorId})
       })
       .then(authorResponse => {
           setAuthors(authorResponse.items);
@@ -32,7 +32,7 @@ const [isLoading, setIsLoading] = useState(true);
         console.log(error)
         setError(error.message)
       }) 
-    }, [blogId, authorName])
+    }, [blogId, authorId])
 
   return {newBlogs, authors, error, isLoading}
 }

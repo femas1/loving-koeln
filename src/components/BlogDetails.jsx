@@ -15,7 +15,8 @@ export const RICHTEXT_OPTIONS = {
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { newBlogs: blog, isLoading, error, authors } = useContentfulApi(id);
+    const { newBlogs: blog, isLoading } = useContentfulApi(id);
+    console.log(blog)
   
   return (
     <div className="blog-detail">
