@@ -16,7 +16,6 @@ const AuthorDetails = () => {
 
     const { author } = useParams();
     const {authors, error, isLoading} = useContentfulApi(null, author);
-    console.log(authors)
     return (
     <div className='author-detail'>
     {authors && (

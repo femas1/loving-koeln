@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 const AuthorList = () => {
   const { authors, isLoading, error } = useContentfulApi();
-  // console.log(authors[0].sys);
   return (
 
     <Stack direction={['column', 'row']} spacing={4} my={4}>
@@ -13,17 +12,17 @@ const AuthorList = () => {
         <Link
           as={RouteLink}
           to={`/blogs/authors/${author.sys.id}`}
-          key={author.fields.id}
+          key={author.sys.id}
           color={"blackAlpha.700"}
         >
 
-          <Card >
+          <Card>
             <CardHeader>
               <Flex spacing='4'>
                 <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                   <Avatar name={author.fields.authorName} />
 
-                  <Box>
+                  <Box >
                     <Heading size='sm'>{author.fields.authorName}</Heading>
                     <Text>Author, Copywriter</Text>
                   </Box>
