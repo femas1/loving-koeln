@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 const AuthorList = () => {
   const { authors, isLoading, error } = useContentfulApi();
   return (
-
-    <Stack direction={['column', 'row']} spacing={4} my={4}>
+<Flex minHeight="80vh">
+    <Stack direction={['column', 'row']} spacing={4} my={4} flex="1">
       {authors && authors.map((author) => (
         <Link
           as={RouteLink}
@@ -35,6 +35,7 @@ const AuthorList = () => {
       ))}
 
     </Stack>
+</Flex>
   )
 }
 

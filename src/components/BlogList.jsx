@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import useFetch from "../hooks/useFetch";
 import {
   Heading,
   Link,
@@ -20,6 +19,7 @@ const BlogList = () => {
     <div className="blog-list">
             {newBlogs && newBlogs.map(newBlog =>
 
+            
 
                 <Card
                     key={newBlog.fields.title}
@@ -29,7 +29,7 @@ const BlogList = () => {
                     bgColor="black.50"
                     marginTop={10}
                   >
-
+{newBlog && console.log(newBlog)}
                   {newBlog.fields.image && (
                       <Image
                         objectFit='cover'

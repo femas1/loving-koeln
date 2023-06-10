@@ -10,6 +10,7 @@ const Navbar = () => {
                 bgColor="#FD0324"
                 align="center"
                 justify="space-between"
+                color="white"
                 // maxWidth="1024px"
                 width="100%"
           >
