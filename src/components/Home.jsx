@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, Heading, Box } from "@chakra-ui/react";
 import { heading } from "../homeContent";
+import koeln from "../assets/koeln.jpg"
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
         width="100%"
         height="300px"
         objectFit="cover"
-        src="src/assets/koeln-titelbild.jpg"
+        src={koeln}
         alt="koeln-titelbild"
       />
       <Box color={"blackAlpha.800"} maxW="1024px" p={5}>
