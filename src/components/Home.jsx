@@ -10,7 +10,7 @@ const Home = () => {
         height="300px"
         objectFit="cover"
         src="src\assets\koeln-titelbild.jpg"
-        alt="Dan Abramov"
+        alt="koeln-titelbild"
       />
       <Box color={"blackAlpha.800"} maxW="1024px" p={5}>
         <Heading py={5}>{heading}</Heading>
