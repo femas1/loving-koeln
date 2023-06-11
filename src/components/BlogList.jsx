@@ -29,15 +29,15 @@ const BlogList = () => {
                     bgColor="black.50"
                     marginTop={10}
                   >
-{newBlog && console.log(newBlog)}
-                  {newBlog.fields.image && (
+
+                  {/* {newBlog.fields.image && (
                       <Image
                         objectFit='cover'
                         maxW={{ base: '100%', sm: '200px' }}
                         src={newBlog.fields.image.fields.file.url}
                         alt={newBlog.fields.image.fields.title}
                       />
-                    )}
+                    )} */}
 
                     <Stack>
                       <CardBody>
@@ -53,7 +53,6 @@ const BlogList = () => {
                             py='2'
                             color="blackAlpha.700"
                         >
-                         {/* {newBlog.fields.text.slice(0, 200)}... */}
                         </Text>
                       </CardBody>
 
