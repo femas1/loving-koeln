@@ -9,7 +9,7 @@ const Home = () => {
         width="100%"
         height="300px"
         objectFit="cover"
-        src="src\assets\koeln-titelbild.jpg"
+        src="src/assets/koeln-titelbild.jpg"
         alt="koeln-titelbild"
       />
       <Box color={"blackAlpha.800"} maxW="1024px" p={5}>
