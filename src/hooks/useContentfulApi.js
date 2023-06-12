@@ -20,7 +20,6 @@ const [isLoading, setIsLoading] = useState(true);
       .then((res) => {
           setNewBlogs(res.items);
           setIsLoading(false);
-          // setError(null);
           return client.getEntries({content_type: 'authors', 'sys.id': authorId})
       })
       .then(authorResponse => {
@@ -29,7 +28,6 @@ const [isLoading, setIsLoading] = useState(true);
           setError(null);
       })
       .catch((error) => {
-        console.log(error)
         setError(error.message)
       }) 
     }, [blogId, authorId])

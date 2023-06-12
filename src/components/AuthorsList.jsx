@@ -1,7 +1,6 @@
 import { Link as RouteLink } from 'react-router-dom';
-import { Heading, Stack, HStack, VStack, Link, Card, CardHeader, CardBody, SimpleGrid, CardFooter, Text, Avatar, Box, Flex, IconButton } from '@chakra-ui/react'
+import { Heading, Stack, Link, Card, CardHeader, Text, Avatar, Box, Flex } from '@chakra-ui/react'
 import useContentfulApi from '../hooks/useContentfulApi';
-import { useParams } from "react-router-dom";
 
 const AuthorList = () => {
   const { authors, isLoading, error } = useContentfulApi();
