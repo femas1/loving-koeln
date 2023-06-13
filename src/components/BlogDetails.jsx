@@ -44,7 +44,6 @@ const BlogDetails = () => {
                   >
                     <Tag 
                         p="2"
-                        colorScheme="black"
                     >
                         {blog[0].fields.author.fields.authorName}
                         </Tag>

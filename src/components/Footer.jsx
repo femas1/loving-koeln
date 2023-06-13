@@ -23,6 +23,7 @@ const Footer = () => {
                 textAlign={"center"} 
                 pt={5}
                 isExternal
+                color="white"
             >
               Federico Massara - 2023 &copy;
             </Link>

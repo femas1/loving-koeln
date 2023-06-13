@@ -11,7 +11,7 @@ const Navbar = () => {
                 align="center"
                 justify="space-between"
                 color="white"
-                // maxWidth="1024px"
+                fontSize={24}
                 width="100%"
           >
                       <Image src={logo} maxHeight="80px" />

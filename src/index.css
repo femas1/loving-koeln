@@ -2,4 +2,5 @@
 .blog-detail, 
 .author-detail {
     max-width: 1024px;
+    min-height: 80vh;
 }
