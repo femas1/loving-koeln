@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react';
 import { useParams } from 'react-router-dom';
 import useContentfulApi from '../hooks/useContentfulApi';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -19,10 +19,19 @@ const AuthorDetails = () => {
     return (
     <div className='author-detail'>
     {authors && (
-             <Box>
-             <Heading my={5} key={authors[0].sys.id} color={'blackAlpha.800'}>{authors[0].fields.authorName}</Heading>
-             {documentToReactComponents(authors[0].fields.bio, RICHTEXT_OPTIONS)}
-              </Box>
+             <Card
+             mt={5}
+             variant="elevated"
+             bgColor="black.50"
+             color="blackAlpha.800"
+             key={authors[0].sys.id}
+             >
+                 <CardHeader>
+              <Heading size='xl'>{authors[0].fields.authorName}</Heading>
+            </CardHeader>
+             
+             <CardBody>{documentToReactComponents(authors[0].fields.bio, RICHTEXT_OPTIONS)}</CardBody>
+              </Card>
         )}
 
     </div>
